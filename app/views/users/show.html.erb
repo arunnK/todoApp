@@ -1,0 +1,17 @@
+<% user=User.find_by_email(params[:email]) %>
+<h3>Hello <%= current_user.first_name%>,</h3>
+<p>Your profile...</p>
+<p>
+  <strong>Name:</strong>
+  <%= current_user.first_name %> <%= current_user.last_name %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= current_user.email %>
+</p>
+<p>
+  <strong>Phone:</strong>
+  <%= current_user.phone %>
+</p>
+<%= link_to 'Manage ToDo(s)', todolists_path %>
+

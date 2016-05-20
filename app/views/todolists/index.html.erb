@@ -1,0 +1,34 @@
+<h2> Todo Items</h2>
+
+<% @todos.each do |t| %>
+<table>
+	<tr>
+		<th>Task</th>
+		<th>Due Date</th>
+		<th>Action</th>
+	</tr>
+	<tr>
+		<td><%= t.task %></td>
+		<td><%= t.duedate %></td>
+		<td><%= link_to "Mark as Done", todolist_path(t), :method => :put %></td>
+	</tr>
+</table>
+<% end %>
+
+<h2>Done List</h2>
+<% @todone.each do |t| %>
+<table>
+	<tr>
+		<th>Task</th>
+		<th>Due Date</th>
+		<th>Action</th>
+	</tr>
+	<tr>
+		<td><%= t.task %></td>
+		<td><%= t.duedate %></td>
+		<td><%= link_to "Remove", t, :confirm => "Are you sure?", :method => :delete %></td>
+	</tr>
+</table>
+<% end %>
+<p><%= link_to "Add new Item", new_todolist_path %></p>
+

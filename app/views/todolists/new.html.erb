@@ -1,0 +1,7 @@
+<h1>Add new Item</h1>
+<%= form_for @todolist do |f| %>
+	<%= f.label :task %>: <%= f.text_field :task %>
+	<%= f.label :duedate %>: <%= f.date_select(:duedate, :order => [:month, :day, :year]) %>
+	<%= f.hidden_field :done, :value => false %>
+	<%= f.submit "Add to list" %>
+<% end %>
