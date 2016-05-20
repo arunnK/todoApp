@@ -41,8 +41,8 @@ class TodolistsController < ApplicationController
 
   def todo_params
     params.require(:todolist).permit(:task, :done, :duedate).tap do |p|
-      p[:user_id] = current_user.id
-    end
+     p[:user_id] = current_user.id
+  end
   end  
 end
 
