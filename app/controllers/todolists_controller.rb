@@ -19,7 +19,7 @@ class TodolistsController < ApplicationController
     if @todolist.update_attribute(:done, true)
       redirect_to todolists_path, notice: "Todo item marked as done!"
     else
-      redirect_to todolists_path, notice: "Todo item was unable to marked as done!"
+      redirect_to todolists_path, notice: "Todo item cannot be marked as done!"
     end
   end
 
