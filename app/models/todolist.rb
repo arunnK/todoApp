@@ -6,7 +6,6 @@ class Todolist < ActiveRecord::Base
 	before_validation :init
 
 	def init
-		self.done = false
-		true
+		(self.done ||= false) || true
 	end
 end
