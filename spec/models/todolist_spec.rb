@@ -8,7 +8,7 @@ RSpec.describe Todolist do
 
 	context 'Access completed_task_list' do
 		it 'should return done tasks' do
-      expect(Todolist.done).to eq ([completed_task_list])
+      expect(Todolist.done).to eq (completed_task_list)
     end
 	end
 
