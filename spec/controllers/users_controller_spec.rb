@@ -16,8 +16,14 @@ RSpec.describe UsersController, type: :controller  do
     end
   end
 
-  describe '#create' do
+  describe '#new' do
+    it 'should redirect to the create new user page' do
+      get :new
+      expect(controller.new).to render_template :new
+    end
+  end
 
+  describe '#create' do
     context 'with valid attributes' do
       it 'creates a user' do
         post :create, user: @valid_params
@@ -39,7 +45,6 @@ RSpec.describe UsersController, type: :controller  do
         expect(response).to render_template :new
       end
     end
-
   end
 
 end 
